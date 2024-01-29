@@ -120,13 +120,27 @@ router.put('/:id', (req, res) => {
       return res.json(product);
     })
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });
 
-router.delete('/:id', (req, res) => {
-  // delete one product by its `id` value
+// deletes product by id value
+router.delete('/:id', async (req, res) => {
+  try {
+    const numRowsDeleted = await Product.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (numRowsDeleted === 0) {
+      return res.status(404).json({error: 'Product not found'});
+    }
+    res.json({message: 'Product deleted successfully'});
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({error: 'Internal Server Error'});
+  }
 });
 
 module.exports = router;
