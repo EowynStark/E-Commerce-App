@@ -7,7 +7,7 @@ This application is designed to help a company keep their items organized so tha
 ## Authors and Credits
 original sourcecode written by <a href="https://github.com/coding-boot-camp/fantastic-umbrella">Xandromus</a>
 
-additional code written and formatted by <a href="https://github.com/EowynStark">Andria Jean</a>
+additional code written and formatted by <a href="https://github.com/EowynStark">Andria Jean</a> with help from class materials and outside research resources
 
 ## Version History
 Version 1.0 created on 1/25/2024
